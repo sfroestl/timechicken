@@ -17,7 +17,6 @@
 		9EADE23D165245AC0042455F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE23C165245AC0042455F /* Default.png */; };
 		9EADE23F165245AC0042455F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE23E165245AC0042455F /* Default@2x.png */; };
 		9EADE241165245AC0042455F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE240165245AC0042455F /* Default-568h@2x.png */; };
-		9EADE244165245AC0042455F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE242165245AC0042455F /* MainStoryboard.storyboard */; };
 		9EADE247165245AC0042455F /* TimeChicken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE245165245AC0042455F /* TimeChicken.xcdatamodeld */; };
 		9EADE24A165245AC0042455F /* TCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE249165245AC0042455F /* TCMasterViewController.m */; };
 		9EADE24D165245AC0042455F /* TCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE24C165245AC0042455F /* TCDetailViewController.m */; };
@@ -27,6 +26,8 @@
 		9EADE258165245AC0042455F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22E165245AC0042455F /* CoreData.framework */; };
 		9EADE260165245AC0042455F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE25E165245AC0042455F /* InfoPlist.strings */; };
 		9EADE263165245AC0042455F /* TimeChickenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE262165245AC0042455F /* TimeChickenTests.m */; };
+		9EC513F816525B1D00D77F04 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC513F716525B1D00D77F04 /* TCTask.m */; };
+		9EC513FB16525D3C00D77F04 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC513FA16525D3C00D77F04 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,6 @@
 		9EADE23C165245AC0042455F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9EADE23E165245AC0042455F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9EADE240165245AC0042455F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		9EADE243165245AC0042455F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9EADE246165245AC0042455F /* TimeChicken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeChicken.xcdatamodel; sourceTree = "<group>"; };
 		9EADE248165245AC0042455F /* TCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMasterViewController.h; sourceTree = "<group>"; };
 		9EADE249165245AC0042455F /* TCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMasterViewController.m; sourceTree = "<group>"; };
@@ -66,6 +66,9 @@
 		9EADE25F165245AC0042455F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EADE261165245AC0042455F /* TimeChickenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeChickenTests.h; sourceTree = "<group>"; };
 		9EADE262165245AC0042455F /* TimeChickenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeChickenTests.m; sourceTree = "<group>"; };
+		9EC513F616525B1D00D77F04 /* TCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCTask.h; path = Model/TCTask.h; sourceTree = "<group>"; };
+		9EC513F716525B1D00D77F04 /* TCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCTask.m; path = Model/TCTask.m; sourceTree = "<group>"; };
+		9EC513FA16525D3C00D77F04 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,13 +131,8 @@
 		9EADE230165245AC0042455F /* TimeChicken */ = {
 			isa = PBXGroup;
 			children = (
-				9EADE239165245AC0042455F /* TCAppDelegate.h */,
-				9EADE23A165245AC0042455F /* TCAppDelegate.m */,
-				9EADE242165245AC0042455F /* MainStoryboard.storyboard */,
-				9EADE248165245AC0042455F /* TCMasterViewController.h */,
-				9EADE249165245AC0042455F /* TCMasterViewController.m */,
-				9EADE24B165245AC0042455F /* TCDetailViewController.h */,
-				9EADE24C165245AC0042455F /* TCDetailViewController.m */,
+				9EC513F5165253B100D77F04 /* GUI */,
+				9EC513F41652537A00D77F04 /* Model */,
 				9EADE245165245AC0042455F /* TimeChicken.xcdatamodeld */,
 				9EADE231165245AC0042455F /* Supporting Files */,
 			);
@@ -172,6 +170,29 @@
 				9EADE25E165245AC0042455F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9EC513F41652537A00D77F04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EC513F616525B1D00D77F04 /* TCTask.h */,
+				9EC513F716525B1D00D77F04 /* TCTask.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9EC513F5165253B100D77F04 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				9EC513FA16525D3C00D77F04 /* MainStoryboard.storyboard */,
+				9EADE239165245AC0042455F /* TCAppDelegate.h */,
+				9EADE23A165245AC0042455F /* TCAppDelegate.m */,
+				9EADE248165245AC0042455F /* TCMasterViewController.h */,
+				9EADE249165245AC0042455F /* TCMasterViewController.m */,
+				9EADE24B165245AC0042455F /* TCDetailViewController.h */,
+				9EADE24C165245AC0042455F /* TCDetailViewController.m */,
+			);
+			path = GUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +271,7 @@
 				9EADE23D165245AC0042455F /* Default.png in Resources */,
 				9EADE23F165245AC0042455F /* Default@2x.png in Resources */,
 				9EADE241165245AC0042455F /* Default-568h@2x.png in Resources */,
-				9EADE244165245AC0042455F /* MainStoryboard.storyboard in Resources */,
+				9EC513FB16525D3C00D77F04 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +311,7 @@
 				9EADE247165245AC0042455F /* TimeChicken.xcdatamodeld in Sources */,
 				9EADE24A165245AC0042455F /* TCMasterViewController.m in Sources */,
 				9EADE24D165245AC0042455F /* TCDetailViewController.m in Sources */,
+				9EC513F816525B1D00D77F04 /* TCTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,14 +340,6 @@
 				9EADE234165245AC0042455F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9EADE242165245AC0042455F /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9EADE243165245AC0042455F /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		9EADE25E165245AC0042455F /* InfoPlist.strings */ = {
@@ -395,7 +409,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimeChicken/TimeChicken-Prefix.pch";
 				INFOPLIST_FILE = "TimeChicken/TimeChicken-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,7 +422,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TimeChicken/TimeChicken-Prefix.pch";
 				INFOPLIST_FILE = "TimeChicken/TimeChicken-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -464,6 +482,7 @@
 				9EADE268165245AC0042455F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EADE269165245AC0042455F /* Build configuration list for PBXNativeTarget "TimeChickenTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +491,7 @@
 				9EADE26B165245AC0042455F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

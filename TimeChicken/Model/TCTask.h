@@ -1,0 +1,13 @@
+//
+//  TCTask.h
+//  TimeChicken
+//
+//  Created by Sebastian Fröstl on 13.11.12.
+//  Copyright (c) 2012 Sebastian Fröstl. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface TCTask : NSObject
+
+@end
