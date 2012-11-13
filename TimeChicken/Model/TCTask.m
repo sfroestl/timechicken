@@ -10,4 +10,15 @@
 
 @implementation TCTask
 
+@synthesize title = _title;
+@synthesize desc = _desc;
+
+- (id)initWithTitle:(NSString*)title desc:(NSString*)desc {
+    if ((self = [super init])) {
+        self.title = title;
+        self.desc = desc;
+    }
+    return self;
+}
+
 @end

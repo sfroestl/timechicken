@@ -8,7 +8,8 @@
 
 #import "TCAppDelegate.h"
 
-#import "TCMasterViewController.h"
+#import "TCTaskListViewController.h"
+#import "TCTask.h"
 
 @implementation TCAppDelegate
 
@@ -18,9 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // At beginning of application:didFinishLaunchingWithOptions
+    TCTask *task1 = [[TCTask alloc] initWithTitle:@"Testtask uno" desc: @"potatoBugThumb"];
+    TCTask *task2 = [[TCTask alloc] initWithTitle:@"Testtask due" desc: @"more more more"];
+
+    NSMutableArray *tasks = [NSMutableArray arrayWithObjects:task1, task2, nil];
+    
+    UINavigationController * navController = (UINavigationController *) self.window.rootViewController;
+    TCTaskListViewController * taskListController = [navController.viewControllers objectAtIndex:0];
+    taskListController.taskList = tasks;
+    
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    TCMasterViewController *controller = (TCMasterViewController *)navigationController.topViewController;
+    TCTaskListViewController *controller = (TCTaskListViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }

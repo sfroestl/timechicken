@@ -6,15 +6,18 @@
 //  Copyright (c) 2012 Sebastian Fröstl. All rights reserved.
 //
 
-#import "TCMasterViewController.h"
+#import "TCTaskListViewController.h"
 
-#import "TCDetailViewController.h"
+#import "TCTaskViewController.h"
 
-@interface TCMasterViewController ()
+#import "TCTask.h"
+
+@interface TCTaskListViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation TCMasterViewController
+@implementation TCTaskListViewController
+@synthesize taskList = _taskList;
 
 - (void)awakeFromNib
 {
@@ -29,6 +32,8 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.title = @"Tasklist";
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,14 +71,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+//    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    return _taskList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell"];
+    TCTask *task = [self.taskList objectAtIndex:indexPath.row];
+    cell.textLabel.text = task.title;
+//    cell.imageView.image = task.thumbImage;
     return cell;
 }
 

@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Sebastian Fröstl. All rights reserved.
 //
 
-#import "TCDetailViewController.h"
+#import "TCTaskViewController.h"
 
-@interface TCDetailViewController ()
+@interface TCTaskViewController ()
 - (void)configureView;
 @end
 
-@implementation TCDetailViewController
+@implementation TCTaskViewController
 
 #pragma mark - Managing the detail item
 

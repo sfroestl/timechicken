@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TCDetailViewController : UIViewController
+@interface TCTaskViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 
