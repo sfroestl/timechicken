@@ -29,10 +29,9 @@
     UINavigationController * navController = (UINavigationController *) self.window.rootViewController;
     TCTaskListViewController * taskListController = [navController.viewControllers objectAtIndex:0];
     taskListController.taskList = tasks;
-    
+    [navController.navigationBar setBarStyle: UIBarStyleBlack];
     // Override point for customization after application launch.
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    TCTaskListViewController *controller = (TCTaskListViewController *)navigationController.topViewController;
+
     return YES;
 }
 							

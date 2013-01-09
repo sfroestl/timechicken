@@ -32,14 +32,16 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
+//    [self.completeButton setBackgroundColor:[UIColor lightGrayColor]];
+    
 
     if (self.detailItem) {
         self.titleTextField.text = self.detailItem.title;
         self.textField.text = self.detailItem.desc;
         if(!self.detailItem.completed){
-            [self.completeButton setTitle:@"Done!" forState:UIControlStateNormal];
+            [self.completeButton setTitle:@"complete" forState:UIControlStateNormal];
         } else {
-            [self.completeButton setTitle:@"Reopen!" forState:UIControlStateNormal];
+            [self.completeButton setTitle:@"reopen" forState:UIControlStateNormal];
         }
     }
 }
@@ -77,10 +79,16 @@
 }
 
 - (IBAction)pressedCompleteButton:(id)sender {
+    if(self.detailItem.completed) {
+        self.detailItem.completed = NO;
+        [self configureView];
+    } else {
+        self.detailItem.completed = YES;
+        [self configureView];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"touchesBegan:withEvent:");
     [self.view endEditing:YES];
     [super touchesBegan:touches withEvent:event];
 }
