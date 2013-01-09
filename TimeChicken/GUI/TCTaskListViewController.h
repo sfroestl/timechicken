@@ -10,10 +10,8 @@
 
 #import <CoreData/CoreData.h>
 
-@interface TCTaskListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface TCTaskListViewController : UITableViewController
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong) NSMutableArray *taskList;
 
 @end

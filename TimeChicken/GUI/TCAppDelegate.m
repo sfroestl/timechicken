@@ -19,9 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     // At beginning of application:didFinishLaunchingWithOptions
-    TCTask *task1 = [[TCTask alloc] initWithTitle:@"Testtask uno" desc: @"potatoBugThumb"];
-    TCTask *task2 = [[TCTask alloc] initWithTitle:@"Testtask due" desc: @"more more more"];
+    TCTask *task1 = [[TCTask alloc] initWithTitle:@"Task 1" desc: @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"];
+    TCTask *task2 = [[TCTask alloc] initWithTitle:@"Task 2" desc: @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"];
 
     NSMutableArray *tasks = [NSMutableArray arrayWithObjects:task1, task2, nil];
     
@@ -32,7 +33,6 @@
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     TCTaskListViewController *controller = (TCTaskListViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }
 							

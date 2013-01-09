@@ -71,8 +71,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-mb-qax">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-mb-qax">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <action selector="textFieldTextChanged:" destination="21" eventType="editingChanged" id="kud-MM-UoP"/>
@@ -94,14 +95,38 @@
                                     <action selector="pressedCompleteButton:" destination="21" eventType="touchUpInside" id="gFp-4z-cPO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foR-YZ-Tg9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7M-3V-KhV">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mqP-Ii-98Y">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleFieldTextChanged:" destination="21" eventType="editingChanged" id="K2J-zS-z6N"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mqP-Ii-98Y" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9TQ-uk-uuc"/>
+                            <constraint firstItem="foR-YZ-Tg9" firstAttribute="top" secondItem="22" secondAttribute="top" constant="100" id="BIA-lC-9z1"/>
+                            <constraint firstItem="mqP-Ii-98Y" firstAttribute="top" secondItem="H7M-3V-KhV" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CbH-Yy-xIF"/>
                             <constraint firstAttribute="bottom" secondItem="qXP-zA-lMx" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="CyT-Xg-wN5"/>
+                            <constraint firstAttribute="trailing" secondItem="mqP-Ii-98Y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EfY-Uc-wl2"/>
                             <constraint firstAttribute="trailing" secondItem="x6t-mb-qax" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Lzh-fA-yKS"/>
-                            <constraint firstItem="x6t-mb-qax" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="aA1-Mo-ar5"/>
+                            <constraint firstItem="H7M-3V-KhV" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Tpu-Vx-x2h"/>
+                            <constraint firstItem="H7M-3V-KhV" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="b5v-Hh-aTR"/>
+                            <constraint firstItem="foR-YZ-Tg9" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dx7-Nq-MRv"/>
                             <constraint firstItem="x6t-mb-qax" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ffA-Wl-c7x"/>
-                            <constraint firstItem="qXP-zA-lMx" firstAttribute="centerX" secondItem="x6t-mb-qax" secondAttribute="centerX" type="default" id="g1h-1L-5VD"/>
+                            <constraint firstItem="x6t-mb-qax" firstAttribute="top" secondItem="foR-YZ-Tg9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pXb-uU-T6Z"/>
+                            <constraint firstItem="qXP-zA-lMx" firstAttribute="centerX" secondItem="x6t-mb-qax" secondAttribute="centerX" type="default" id="pr7-Fb-laD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
@@ -109,6 +134,7 @@
                     <connections>
                         <outlet property="completeButton" destination="qXP-zA-lMx" id="kes-uP-NYp"/>
                         <outlet property="textField" destination="x6t-mb-qax" id="bWW-Xu-5M0"/>
+                        <outlet property="titleTextField" destination="mqP-Ii-98Y" id="l9Y-pm-Hph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -116,23 +142,6 @@
             <point key="canvasLocation" x="902" y="64"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TCTaskListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TCTaskListViewController.h"/>
-        </class>
-        <class className="TCTaskViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TCTaskViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressedCompleteButton:"/>
-                <relationship kind="action" name="textFieldTextChanged:"/>
-                <relationship kind="outlet" name="completeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

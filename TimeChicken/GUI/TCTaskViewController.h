@@ -14,9 +14,12 @@
 
 @property (strong, nonatomic) TCTask *detailItem;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextView *descTextView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
 
 - (IBAction)textFieldTextChanged:(id)sender;
+- (IBAction)titleFieldTextChanged:(id)sender;
 - (IBAction)pressedCompleteButton:(id)sender;
 
 @end
