@@ -12,11 +12,16 @@
 
 @synthesize title = _title;
 @synthesize desc = _desc;
+@synthesize project = _project;
+@synthesize dueDate = _dueDate;
+@synthesize workedTime = _workedTime;
 
-- (id)initWithTitle:(NSString*)title desc:(NSString*)desc {
-    if ((self = [super init])) {
+-(id)initWithTitle:(NSString *)title desc:(NSString *)desc project:(NSString *)project dueDate:(NSDate *)dueDate{
+    if((self = [super init])){
         self.title = title;
         self.desc = desc;
+        self.project = project;
+        self.dueDate = dueDate;
     }
     return self;
 }

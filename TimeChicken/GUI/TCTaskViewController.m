@@ -7,12 +7,15 @@
 //
 
 #import "TCTaskViewController.h"
+#import "TCTask.h"
 
 @interface TCTaskViewController ()
 - (void)configureView;
 @end
 
 @implementation TCTaskViewController
+
+@synthesize detailItem = _detailItem;
 
 #pragma mark - Managing the detail item
 
@@ -30,8 +33,13 @@
 {
     // Update the user interface for the detail item.
 
+    
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.title = self.detailItem.title;
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
+        self.projectDetails.text
+            = [NSString stringWithFormat: @"Project: %@\nDueDate: %@\nworkedTime: %d",self.detailItem.project,[dateFormat stringFromDate:self.detailItem.dueDate],self.detailItem.workedTime];
     }
 }
 

@@ -19,10 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // At beginning of application:didFinishLaunchingWithOptions
-    TCTask *task1 = [[TCTask alloc] initWithTitle:@"Testtask uno" desc: @"potatoBugThumb"];
-    TCTask *task2 = [[TCTask alloc] initWithTitle:@"Testtask due" desc: @"more more more"];
-
+    NSDate* date;
+    for(int i = 0; i < 30; i++) {
+        date = [NSDate dateWithTimeIntervalSinceNow:(NSTimeInterval)((u_int32_t)i * 12 * 60 * 60 + arc4random_uniform(8 * 60 * 60))];
+    }    
+    
+    TCTask *task1 = [[TCTask alloc] initWithTitle:@"finish coding" desc:@"TimeChicken fertig coden" project:@"TimeChicken" dueDate:date ];
+    TCTask *task2 = [[TCTask alloc] initWithTitle:@"finish design" desc:@"Design fertigstellen" project:@"TimeChicken" dueDate:date];
+    
     NSMutableArray *tasks = [NSMutableArray arrayWithObjects:task1, task2, nil];
     
     UINavigationController * navController = (UINavigationController *) self.window.rootViewController;
