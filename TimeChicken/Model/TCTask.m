@@ -12,11 +12,13 @@
 
 @synthesize title = _title;
 @synthesize desc = _desc;
+@synthesize completed = _completed;
 
 - (id)initWithTitle:(NSString*)title desc:(NSString*)desc {
     if ((self = [super init])) {
         self.title = title;
         self.desc = desc;
+        self.completed = NO;
     }
     return self;
 }

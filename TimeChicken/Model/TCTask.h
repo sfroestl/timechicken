@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *desc;
+@property (nonatomic, assign) BOOL completed;
 
 - (id)initWithTitle:(NSString*)title desc:(NSString*)desc;
 

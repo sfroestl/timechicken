@@ -27,13 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     
-    self.title = @"Tasklist";
+    self.title = @"Your Tasks";
+	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd                                              target:self action:@selector(addTapped:)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +68,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return _taskList.count;
 }
 
@@ -93,17 +89,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }   
+        // deletes Item in data model
+        [_taskList removeObjectAtIndex:indexPath.row];
+        // deletes Item in table view
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
@@ -114,11 +104,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+    TCTaskViewController *detailController =segue.destinationViewController;
+    TCTask *task = [self.taskList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    detailController.detailItem = task;
+}
+
+- (void)addTapped:(id)sender {
+    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil];
+    [_taskList addObject:newTask];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
+    
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    [self performSegueWithIdentifier:@"MySegue" sender:self];
 }
 
 #pragma mark - Fetched results controller

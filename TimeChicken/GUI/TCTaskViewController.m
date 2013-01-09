@@ -7,6 +7,7 @@
 //
 
 #import "TCTaskViewController.h"
+#import "TCTask.h"
 
 @interface TCTaskViewController ()
 - (void)configureView;
@@ -31,12 +32,19 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.textField.text = self.detailItem.desc;
+        if(!self.detailItem.completed){
+            [self.completeButton setTitle:@"Done!" forState:UIControlStateNormal];
+        } else {
+            [self.completeButton setTitle:@"Reopen!" forState:UIControlStateNormal];
+        }
     }
 }
 
 - (void)viewDidLoad
 {
+    
+    self.title = self.detailItem.title;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
@@ -48,4 +56,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)textFieldTextChanged:(id)sender {
+    self.detailItem.desc = self.textField.text;
+}
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)pressedCompleteButton:(id)sender {
+}
 @end

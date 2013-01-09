@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class TCTask;
+
 @interface TCTaskViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) TCTask *detailItem;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *completeButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+- (IBAction)textFieldTextChanged:(id)sender;
+- (IBAction)pressedCompleteButton:(id)sender;
+
 @end
