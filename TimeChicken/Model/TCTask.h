@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSString *project;
 @property (strong, nonatomic) NSDate *dueDate;
 @property (assign, nonatomic) int workedTime;
+@property (assign, nonatomic) BOOL completed;
 
 - (id)initWithTitle:(NSString*)title desc:(NSString*)desc project:(NSString*)project dueDate:(NSDate*)dueDate;
 
