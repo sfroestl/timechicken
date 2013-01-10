@@ -48,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _taskList.count;
+    return [self.taskList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,23 +82,29 @@
     return YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    TCTaskTableViewController *detailController =segue.destinationViewController;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    TCTaskTableViewController *taskDetailController = segue.destinationViewController;
     TCTask *task = [self.taskList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-    detailController.detailItem = task;
+    taskDetailController.detailItem = task;
 }
 
-//- (void)addTapped:(id)sender {
-//    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil project:nil dueDate:nil];
-//    [_taskList addObject:newTask];
-//    
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];
-//    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-//    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
-//    
-//    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-//    [self performSegueWithIdentifier:@"MySegue" sender:self];
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    TCTaskTableViewController *detailController =segue.destinationViewController;
+//    TCTask *task = [self.taskList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+//    detailController.detailItem = task;
 //}
+
+- (void)addTapped:(id)sender {
+    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil project:nil dueDate:nil];
+    [self.taskList addObject:newTask];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];
+    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
+    
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    [self performSegueWithIdentifier:@"TaskListToTaskSegue" sender:self];
+}
 
 @end
