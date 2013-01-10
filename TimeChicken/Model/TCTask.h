@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface TCTask : NSObject
-
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *desc;
-@property (nonatomic, assign) BOOL completed;
+@property (strong, nonatomic) NSString *project;
+@property (strong, nonatomic) NSDate *dueDate;
+@property (assign, nonatomic) int workedTime;
 
-- (id)initWithTitle:(NSString*)title desc:(NSString*)desc;
+- (id)initWithTitle:(NSString*)title desc:(NSString*)desc project:(NSString*)project dueDate:(NSDate*)dueDate;
 
 @end
