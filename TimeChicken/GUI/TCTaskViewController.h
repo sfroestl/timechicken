@@ -24,5 +24,7 @@
 - (IBAction)textFieldTextChanged:(id)sender;
 - (IBAction)titleFieldTextChanged:(id)sender;
 - (IBAction)pressedCompleteButton:(id)sender;
+- (IBAction)projectFieldTextChanged:(id)sender;
+- (IBAction)dueDateFieldTextChanged:(id)sender;
 
 @end

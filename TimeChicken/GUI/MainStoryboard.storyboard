@@ -89,6 +89,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="projectFieldTextChanged:" destination="21" eventType="editingChanged" id="bQ0-9F-aZY"/>
                                     <action selector="textFieldTextChanged:" destination="21" eventType="editingChanged" id="A6T-zi-C5V"/>
                                     <outlet property="delegate" destination="21" id="z2f-Li-7xy"/>
                                 </connections>
@@ -100,6 +101,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="dueDateFieldTextChanged:" destination="21" eventType="editingChanged" id="R7v-Ay-TkC"/>
                                     <action selector="textFieldTextChanged:" destination="21" eventType="editingChanged" id="lcU-EE-Mwm"/>
                                     <outlet property="delegate" destination="21" id="h9q-Bw-Daw"/>
                                 </connections>
@@ -177,7 +179,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="upx-2o-gcb">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="189" id="xFg-Oa-QOU"/>
+                                    <constraint firstAttribute="height" constant="189" id="ecd-4t-Q0W"/>
                                 </constraints>
                             </tableView>
                         </subviews>
@@ -185,7 +187,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="upx-2o-gcb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="2h7-v6-NZd"/>
                             <constraint firstItem="mqP-Ii-98Y" firstAttribute="top" secondItem="22" secondAttribute="top" constant="18" id="7Ks-Fi-hu0"/>
-                            <constraint firstItem="upx-2o-gcb" firstAttribute="top" secondItem="2ht-QW-zXJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7Sa-Ig-Ehd"/>
                             <constraint firstAttribute="bottom" secondItem="qXP-zA-lMx" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="8LF-6m-FjM"/>
                             <constraint firstItem="mqP-Ii-98Y" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9TQ-uk-uuc"/>
                             <constraint firstItem="2ht-QW-zXJ" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DJt-6Z-65U"/>
@@ -209,6 +210,7 @@
                             <constraint firstItem="R2D-6I-eGs" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fq2-bF-cei"/>
                             <constraint firstAttribute="trailing" secondItem="R2D-6I-eGs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fz9-bJ-Fqr"/>
                             <constraint firstItem="upx-2o-gcb" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="g8X-7O-L6u"/>
+                            <constraint firstItem="upx-2o-gcb" firstAttribute="top" secondItem="2ht-QW-zXJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gW5-bC-w0S"/>
                             <constraint firstItem="H7M-3V-KhV" firstAttribute="top" secondItem="22" secondAttribute="top" constant="-2" id="gWN-Eb-IvY"/>
                             <constraint firstItem="2ht-QW-zXJ" firstAttribute="top" secondItem="aeo-oi-s4s" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lYp-0e-qwB"/>
                             <constraint firstAttribute="trailing" secondItem="aeo-oi-s4s" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mCP-8B-gY8"/>
@@ -242,7 +244,9 @@
         <class className="TCTaskViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TCTaskViewController.h"/>
             <relationships>
+                <relationship kind="action" name="dueDateFieldTextChanged:"/>
                 <relationship kind="action" name="pressedCompleteButton:"/>
+                <relationship kind="action" name="projectFieldTextChanged:"/>
                 <relationship kind="action" name="textFieldTextChanged:"/>
                 <relationship kind="action" name="titleFieldTextChanged:"/>
                 <relationship kind="outlet" name="completeButton" candidateClass="UIButton"/>

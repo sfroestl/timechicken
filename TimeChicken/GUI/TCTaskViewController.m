@@ -42,7 +42,7 @@
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
         self.dueDateTextField.text = [dateFormat stringFromDate:self.detailItem.dueDate];
-        self.workedTimeLabel.text = 
+        self.title = [NSString stringWithFormat: @"workedTime %d", self.detailItem.workedTime];
         if(!self.detailItem.completed){
             [self.completeButton setTitle:@"complete" forState:UIControlStateNormal];
         } else {
@@ -91,6 +91,17 @@
         self.detailItem.completed = YES;
         [self configureView];
     }
+}
+
+- (IBAction)projectFieldTextChanged:(id)sender {
+    self.detailItem.project = self.projectTextField.text;
+}
+
+- (IBAction)dueDateFieldTextChanged:(id)sender {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyyMMdd"];
+    NSDate *date = [dateFormat dateFromString:self.dueDateTextField.text];
+    self.detailItem.dueDate = date;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
