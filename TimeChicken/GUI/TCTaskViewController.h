@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *projectTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;
+@property (weak, nonatomic) IBOutlet UILabel *workedTimeLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
 

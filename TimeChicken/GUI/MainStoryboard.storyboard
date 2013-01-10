@@ -224,6 +224,7 @@
                         <outlet property="projectTextField" destination="R2D-6I-eGs" id="yNU-b1-u1d"/>
                         <outlet property="textField" destination="x6t-mb-qax" id="bWW-Xu-5M0"/>
                         <outlet property="titleTextField" destination="mqP-Ii-98Y" id="l9Y-pm-Hph"/>
+                        <outlet property="workedTimeLabel" destination="2ht-QW-zXJ" id="zLX-IG-50z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
@@ -249,6 +250,7 @@
                 <relationship kind="outlet" name="projectTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="workedTimeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
