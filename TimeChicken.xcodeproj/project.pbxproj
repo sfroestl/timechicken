@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39FB4F10169EEDC8001BB645 /* TCTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FB4F0F169EEDC8001BB645 /* TCTaskTableViewController.m */; };
 		9EADE229165245AC0042455F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE228165245AC0042455F /* UIKit.framework */; };
 		9EADE22B165245AC0042455F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22A165245AC0042455F /* Foundation.framework */; };
 		9EADE22D165245AC0042455F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22C165245AC0042455F /* CoreGraphics.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39FB4F0E169EEDC8001BB645 /* TCTaskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTaskTableViewController.h; sourceTree = "<group>"; };
+		39FB4F0F169EEDC8001BB645 /* TCTaskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTaskTableViewController.m; sourceTree = "<group>"; };
 		9EADE224165245AC0042455F /* TimeChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EADE228165245AC0042455F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EADE22A165245AC0042455F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -191,6 +194,8 @@
 				9EADE249165245AC0042455F /* TCTaskListViewController.m */,
 				9EADE24B165245AC0042455F /* TCTaskViewController.h */,
 				9EADE24C165245AC0042455F /* TCTaskViewController.m */,
+				39FB4F0E169EEDC8001BB645 /* TCTaskTableViewController.h */,
+				39FB4F0F169EEDC8001BB645 /* TCTaskTableViewController.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				9EADE24A165245AC0042455F /* TCTaskListViewController.m in Sources */,
 				9EADE24D165245AC0042455F /* TCTaskViewController.m in Sources */,
 				9EC513F816525B1D00D77F04 /* TCTask.m in Sources */,
+				39FB4F10169EEDC8001BB645 /* TCTaskTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

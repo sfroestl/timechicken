@@ -8,7 +8,7 @@
 
 #import "TCTaskListViewController.h"
 
-#import "TCTaskViewController.h"
+#import "TCTaskTableViewController.h"
 
 #import "TCTask.h"
 
@@ -84,21 +84,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    TCTaskViewController *detailController =segue.destinationViewController;
+    TCTaskTableViewController *detailController =segue.destinationViewController;
     TCTask *task = [self.taskList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     detailController.detailItem = task;
 }
 
-- (void)addTapped:(id)sender {
-    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil project:nil dueDate:nil];
-    [_taskList addObject:newTask];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];
-    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
-    
-    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-    [self performSegueWithIdentifier:@"MySegue" sender:self];
-}
+//- (void)addTapped:(id)sender {
+//    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil project:nil dueDate:nil];
+//    [_taskList addObject:newTask];
+//    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];
+//    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+//    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
+//    
+//    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+//    [self performSegueWithIdentifier:@"MySegue" sender:self];
+//}
 
 @end
