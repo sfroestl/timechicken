@@ -90,7 +90,7 @@
 }
 
 - (void)addTapped:(id)sender {
-    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil];
+    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil project:nil dueDate:nil];
     [_taskList addObject:newTask];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];

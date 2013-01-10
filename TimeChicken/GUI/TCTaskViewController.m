@@ -38,6 +38,8 @@
     if (self.detailItem) {
         self.titleTextField.text = self.detailItem.title;
         self.textField.text = self.detailItem.desc;
+        self.projectTextField.text = self.detailItem.project;
+        self.dueDateTextField.text = self.detailItem.dueDate;
         if(!self.detailItem.completed){
             [self.completeButton setTitle:@"complete" forState:UIControlStateNormal];
         } else {
