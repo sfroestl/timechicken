@@ -15,8 +15,14 @@
 @property (strong, nonatomic) TCTask *detailItem;
 @property (weak, nonatomic) IBOutlet UITextField *projectTextField;
 @property (weak, nonatomic) IBOutlet UITextField *workedTimeTextField;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UITextField *dueDateTextView;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 
+- (IBAction)projectFieldTextChanged:(id)sender;
+- (IBAction)workedTimeFieldTextChanged:(id)sender;
+- (IBAction)dueDateFieldTextChanged:(id)sender;
+- (IBAction)descriptionFieldTextChanged:(id)sender;
+- (IBAction)titleFieldTextChanged:(id)sender;
 
 @end

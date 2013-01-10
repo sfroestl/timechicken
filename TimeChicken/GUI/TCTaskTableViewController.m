@@ -34,13 +34,13 @@
     NSLog(@"tasktablecontroller");
     
     if (self.detailItem) {
-//        self.title = self.detailItem.title;
+        self.titleTextField.text = self.detailItem.title;
         self.projectTextField.text = self.detailItem.project;
         self.workedTimeTextField.text = [NSString stringWithFormat: @"workedTime %d", self.detailItem.workedTime];
-        self.descriptionTextView.text = self.detailItem.desc;
+        self.descriptionTextField.text = self.detailItem.desc;
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"EEEE MMMM d, YYYY"];
-        self.dueDateTextView.text = [dateFormat stringFromDate:self.detailItem.dueDate];
+        self.dueDateTextField.text = [dateFormat stringFromDate:self.detailItem.dueDate];
         
 //        if(!self.detailItem.completed){
 //            [self.completeButton setTitle:@"complete" forState:UIControlStateNormal];
@@ -81,4 +81,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (IBAction)projectFieldTextChanged:(id)sender {
+}
+
+- (IBAction)workedTimeFieldTextChanged:(id)sender {
+}
+
+- (IBAction)dueDateFieldTextChanged:(id)sender {
+}
+
+- (IBAction)descriptionFieldTextChanged:(id)sender {
+}
+
+- (IBAction)titleFieldTextChanged:(id)sender {
+}
 @end
