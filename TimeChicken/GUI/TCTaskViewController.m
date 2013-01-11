@@ -32,7 +32,7 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-//    [self.completeButton setBackgroundColor:[UIColor lightGrayColor]];
+    [self.completeButton setBackgroundColor:[UIColor lightGrayColor]];
     
 
     if (self.detailItem) {
@@ -68,7 +68,6 @@
 
 - (IBAction)titleFieldTextChanged:(id)sender {
     self.detailItem.title = self.titleTextField.text;
-
 }
 
 #pragma mark UITextFieldDelegate

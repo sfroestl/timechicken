@@ -28,7 +28,7 @@
     
     self.title = @"Your Tasks";
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]                                              initWithBarButtonSystemItem:UIBarButtonSystemItemAdd                                              target:self action:@selector(addTapped:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTapped:)];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -56,6 +56,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell"];
     TCTask *task = [self.taskList objectAtIndex:indexPath.row];
     cell.textLabel.text = task.title;
+    cell.detailTextLabel.text = task.desc;
 //    cell.imageView.image = task.thumbImage;
     return cell;
 }
@@ -84,7 +85,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    TCTaskViewController *detailController =segue.destinationViewController;
+    TCTaskViewController *detailController = segue.destinationViewController;
     TCTask *task = [self.taskList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     detailController.detailItem = task;
 }
