@@ -21,14 +21,10 @@
 {
     
     // At beginning of application:didFinishLaunchingWithOptions
-    TCTask *task1 = [[TCTask alloc] initWithTitle:@"Task 1" desc: @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"];
-    TCTask *task2 = [[TCTask alloc] initWithTitle:@"Task 2" desc: @"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"];
 
-    NSMutableArray *tasks = [NSMutableArray arrayWithObjects:task1, task2, nil];
     
     UINavigationController * navController = (UINavigationController *) self.window.rootViewController;
-    TCTaskListViewController * taskListController = [navController.viewControllers objectAtIndex:0];
-    taskListController.taskList = tasks;
+//    taskListController.taskList = tasks;
     [navController.navigationBar setBarStyle: UIBarStyleBlack];
     // Override point for customization after application launch.
 

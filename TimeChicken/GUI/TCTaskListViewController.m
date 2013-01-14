@@ -9,12 +9,11 @@
 #import "TCTaskListViewController.h"
 
 #import "TCTaskViewController.h"
-
+#import "TCTaskStore.h"
 #import "TCTask.h"
 
 @implementation TCTaskListViewController
 
-@synthesize taskList = _taskList;
 
 - (void)awakeFromNib
 {
@@ -48,13 +47,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _taskList.count;
+    return [[[TCTaskStore taskStore] openTasks] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell"];
-    TCTask *task = [self.taskList objectAtIndex:indexPath.row];
+    TCTask *task = [[[TCTaskStore taskStore] openTasks] objectAtIndex:indexPath.row];
     cell.textLabel.text = task.title;
     cell.detailTextLabel.text = task.desc;
 //    cell.imageView.image = task.thumbImage;
@@ -67,12 +66,20 @@
     return YES;
 }
 
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    [[TCTaskStore taskStore] moveTaskAtIndexInOpenTasks:[fromIndexPath row]toIndex:[toIndexPath row]];
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // deletes Item in data model
-        [_taskList removeObjectAtIndex:indexPath.row];
-        // deletes Item in table view
+        // Delete task in data model
+        TCTaskStore *ts = [TCTaskStore taskStore];
+        NSArray *tasks = [ts openTasks];
+        TCTask *task = [tasks objectAtIndex:[indexPath row]];
+        [ts removeTaskFromOpenTasks:task];
+        
+        // Remove row from table view with an animation
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
@@ -86,20 +93,21 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     TCTaskViewController *detailController = segue.destinationViewController;
-    TCTask *task = [self.taskList objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    TCTask *task = [[[TCTaskStore taskStore] openTasks] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     detailController.detailItem = task;
 }
 
 - (void)addTapped:(id)sender {
-    TCTask *newTask = [[TCTask alloc] initWithTitle:@"New Task" desc:nil];
-    [_taskList addObject:newTask];
+    TCTask *newTask = [[TCTaskStore taskStore] createNewTask];    
+    // Figure out where that item is in the array
+    int lastRow = [[[TCTaskStore taskStore] openTasks] indexOfObject:newTask];
+    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_taskList.count-1 inSection:0];
-    NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:YES];
+    // insert new row into table
+    [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip ] withRowAnimation:UITableViewRowAnimationRight ];
     
-    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
-    [self performSegueWithIdentifier:@"MySegue" sender:self];
+//    [self.tableView selectRowAtIndexPath:ip animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+//    [self performSegueWithIdentifier:@"MySegue" sender:self];
 }
 
 @end

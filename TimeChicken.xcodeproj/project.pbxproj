@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E84938B16A479A700A37315 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E84938816A479A700A37315 /* TCTask.m */; };
+		9E84938C16A479A700A37315 /* TCTaskStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E84938A16A479A700A37315 /* TCTaskStore.m */; };
 		9EADE229165245AC0042455F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE228165245AC0042455F /* UIKit.framework */; };
 		9EADE22B165245AC0042455F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22A165245AC0042455F /* Foundation.framework */; };
 		9EADE22D165245AC0042455F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22C165245AC0042455F /* CoreGraphics.framework */; };
@@ -26,7 +28,6 @@
 		9EADE258165245AC0042455F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22E165245AC0042455F /* CoreData.framework */; };
 		9EADE260165245AC0042455F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE25E165245AC0042455F /* InfoPlist.strings */; };
 		9EADE263165245AC0042455F /* TimeChickenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE262165245AC0042455F /* TimeChickenTests.m */; };
-		9EC513F816525B1D00D77F04 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC513F716525B1D00D77F04 /* TCTask.m */; };
 		9EC513FB16525D3C00D77F04 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC513FA16525D3C00D77F04 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E84938716A479A700A37315 /* TCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTask.h; sourceTree = "<group>"; };
+		9E84938816A479A700A37315 /* TCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTask.m; sourceTree = "<group>"; };
+		9E84938916A479A700A37315 /* TCTaskStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTaskStore.h; sourceTree = "<group>"; };
+		9E84938A16A479A700A37315 /* TCTaskStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTaskStore.m; sourceTree = "<group>"; };
 		9EADE224165245AC0042455F /* TimeChicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeChicken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EADE228165245AC0042455F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EADE22A165245AC0042455F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,8 +71,6 @@
 		9EADE25F165245AC0042455F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EADE261165245AC0042455F /* TimeChickenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeChickenTests.h; sourceTree = "<group>"; };
 		9EADE262165245AC0042455F /* TimeChickenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeChickenTests.m; sourceTree = "<group>"; };
-		9EC513F616525B1D00D77F04 /* TCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCTask.h; path = Model/TCTask.h; sourceTree = "<group>"; };
-		9EC513F716525B1D00D77F04 /* TCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCTask.m; path = Model/TCTask.m; sourceTree = "<group>"; };
 		9EC513FA16525D3C00D77F04 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,8 +178,10 @@
 		9EC513F41652537A00D77F04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9EC513F616525B1D00D77F04 /* TCTask.h */,
-				9EC513F716525B1D00D77F04 /* TCTask.m */,
+				9E84938716A479A700A37315 /* TCTask.h */,
+				9E84938816A479A700A37315 /* TCTask.m */,
+				9E84938916A479A700A37315 /* TCTaskStore.h */,
+				9E84938A16A479A700A37315 /* TCTaskStore.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,7 +316,8 @@
 				9EADE247165245AC0042455F /* TimeChicken.xcdatamodeld in Sources */,
 				9EADE24A165245AC0042455F /* TCTaskListViewController.m in Sources */,
 				9EADE24D165245AC0042455F /* TCTaskViewController.m in Sources */,
-				9EC513F816525B1D00D77F04 /* TCTask.m in Sources */,
+				9E84938B16A479A700A37315 /* TCTask.m in Sources */,
+				9E84938C16A479A700A37315 /* TCTaskStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,5 @@
 
 @interface TCTaskListViewController : UITableViewController
 
-@property (strong) NSMutableArray *taskList;
 
 @end
