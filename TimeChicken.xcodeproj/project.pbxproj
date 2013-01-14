@@ -20,8 +20,8 @@
 		9EADE23F165245AC0042455F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE23E165245AC0042455F /* Default@2x.png */; };
 		9EADE241165245AC0042455F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EADE240165245AC0042455F /* Default-568h@2x.png */; };
 		9EADE247165245AC0042455F /* TimeChicken.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE245165245AC0042455F /* TimeChicken.xcdatamodeld */; };
-		9EADE24A165245AC0042455F /* TCTaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE249165245AC0042455F /* TCTaskListViewController.m */; };
-		9EADE24D165245AC0042455F /* TCTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE24C165245AC0042455F /* TCTaskViewController.m */; };
+		9EADE24A165245AC0042455F /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE249165245AC0042455F /* TaskListViewController.m */; };
+		9EADE24D165245AC0042455F /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EADE24C165245AC0042455F /* TaskDetailViewController.m */; };
 		9EADE255165245AC0042455F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE254165245AC0042455F /* SenTestingKit.framework */; };
 		9EADE256165245AC0042455F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE228165245AC0042455F /* UIKit.framework */; };
 		9EADE257165245AC0042455F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EADE22A165245AC0042455F /* Foundation.framework */; };
@@ -61,10 +61,10 @@
 		9EADE23E165245AC0042455F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9EADE240165245AC0042455F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9EADE246165245AC0042455F /* TimeChicken.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeChicken.xcdatamodel; sourceTree = "<group>"; };
-		9EADE248165245AC0042455F /* TCTaskListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCTaskListViewController.h; sourceTree = "<group>"; };
-		9EADE249165245AC0042455F /* TCTaskListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTaskListViewController.m; sourceTree = "<group>"; };
-		9EADE24B165245AC0042455F /* TCTaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCTaskViewController.h; sourceTree = "<group>"; };
-		9EADE24C165245AC0042455F /* TCTaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTaskViewController.m; sourceTree = "<group>"; };
+		9EADE248165245AC0042455F /* TaskListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
+		9EADE249165245AC0042455F /* TaskListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
+		9EADE24B165245AC0042455F /* TaskDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
+		9EADE24C165245AC0042455F /* TaskDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
 		9EADE253165245AC0042455F /* TimeChickenTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeChickenTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EADE254165245AC0042455F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9EADE25D165245AC0042455F /* TimeChickenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeChickenTests-Info.plist"; sourceTree = "<group>"; };
@@ -192,10 +192,10 @@
 				9EC513FA16525D3C00D77F04 /* MainStoryboard.storyboard */,
 				9EADE239165245AC0042455F /* TCAppDelegate.h */,
 				9EADE23A165245AC0042455F /* TCAppDelegate.m */,
-				9EADE248165245AC0042455F /* TCTaskListViewController.h */,
-				9EADE249165245AC0042455F /* TCTaskListViewController.m */,
-				9EADE24B165245AC0042455F /* TCTaskViewController.h */,
-				9EADE24C165245AC0042455F /* TCTaskViewController.m */,
+				9EADE248165245AC0042455F /* TaskListViewController.h */,
+				9EADE249165245AC0042455F /* TaskListViewController.m */,
+				9EADE24B165245AC0042455F /* TaskDetailViewController.h */,
+				9EADE24C165245AC0042455F /* TaskDetailViewController.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -314,8 +314,8 @@
 				9EADE237165245AC0042455F /* main.m in Sources */,
 				9EADE23B165245AC0042455F /* TCAppDelegate.m in Sources */,
 				9EADE247165245AC0042455F /* TimeChicken.xcdatamodeld in Sources */,
-				9EADE24A165245AC0042455F /* TCTaskListViewController.m in Sources */,
-				9EADE24D165245AC0042455F /* TCTaskViewController.m in Sources */,
+				9EADE24A165245AC0042455F /* TaskListViewController.m in Sources */,
+				9EADE24D165245AC0042455F /* TaskDetailViewController.m in Sources */,
 				9E84938B16A479A700A37315 /* TCTask.m in Sources */,
 				9E84938C16A479A700A37315 /* TCTaskStore.m in Sources */,
 			);

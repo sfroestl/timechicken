@@ -10,7 +10,7 @@
 
 @class TCTask;
 
-@interface TCTaskViewController : UIViewController
+@interface TaskDetailViewController : UIViewController
 
 @property (strong, nonatomic) TCTask *detailItem;
 @property (weak, nonatomic) IBOutlet UITextField *textField;

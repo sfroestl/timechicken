@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Sebastian Fröstl. All rights reserved.
 //
 
-#import "TCTaskListViewController.h"
+#import "TaskListViewController.h"
 
-#import "TCTaskViewController.h"
+#import "TaskDetailViewController.h"
 #import "TCTaskStore.h"
 #import "TCTask.h"
 
-@implementation TCTaskListViewController
+@implementation TaskListViewController
 
 
 - (void)awakeFromNib
@@ -92,7 +92,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    TCTaskViewController *detailController = segue.destinationViewController;
+    TaskDetailViewController *detailController = segue.destinationViewController;
     TCTask *task = [[[TCTaskStore taskStore] openTasks] objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     detailController.detailItem = task;
 }

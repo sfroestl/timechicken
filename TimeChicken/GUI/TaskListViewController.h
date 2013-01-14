@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface TCTaskListViewController : UITableViewController
+@interface TaskListViewController : UITableViewController
 
 
 @end

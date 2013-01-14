@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 Sebastian Fröstl. All rights reserved.
 //
 
-#import "TCTaskViewController.h"
+#import "TaskDetailViewController.h"
 #import "TCTask.h"
 
-@interface TCTaskViewController ()
+@interface TaskDetailViewController ()
 - (void)configureView;
 @end
 
-@implementation TCTaskViewController
+@implementation TaskDetailViewController
 
 
 
